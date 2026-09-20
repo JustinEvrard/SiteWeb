@@ -518,6 +518,11 @@ button {
   transition: gap var(--transition-fast);
 }
 
+.project-link-muted {
+  color: var(--text-muted);
+  cursor: default;
+}
+
 /* =========================================================
    11. Experience timeline
    ========================================================= */

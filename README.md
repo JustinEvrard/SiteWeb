@@ -24,9 +24,9 @@ SiteWeb/
 
 - [x] Ajouter `assets/cv/CV_Justin_Evrard.pdf`
 - [x] Remplacer les liens GitHub/LinkedIn placeholder par les vrais profils
-- [ ] Remplacer l'adresse `mailto:` par la vraie adresse de contact
+- [x] Remplacer l'adresse `mailto:` par la vraie adresse de contact
+- [x] Ajouter le lien réel vers le dépôt du Bot Discord IA (le Site Web Météo n'a pas de dépôt public)
 - [ ] Connecter le formulaire de contact à un service (Formspree, EmailJS, ou une API propre) — il est actuellement validé en front-end uniquement, sans envoi réel
-- [ ] Ajouter des liens réels vers les dépôts des projets (Bot Discord IA, Site Web Météo)
 
 ## Lancer en local
 
