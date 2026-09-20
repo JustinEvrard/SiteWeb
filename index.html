@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justin Evrard — Portfolio</title>
+  <meta name="description" content="Portfolio de Justin Evrard, étudiant en informatique et génie logiciel à l'UQAM, Montréal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Header / Navigation ===== -->
+  <header class="header">
+    <nav class="navbar container">
+      <a href="#accueil" class="logo">JE<span class="logo-dot">.</span></a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le mode sombre/clair" title="Basculer le mode sombre/clair">
+          <!-- Sun icon -->
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <!-- Moon icon -->
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== A. Hero / Accueil ===== -->
+    <section id="accueil" class="hero">
+      <div class="container hero-content">
+        <p class="hero-eyebrow reveal">Développeur logiciel · Montréal, QC</p>
+        <h1 class="hero-title reveal">
+          Salut, je suis <span class="highlight">Justin Evrard</span>.<br />
+          Je construis des logiciels avec rigueur, <span class="highlight-alt">et un peu d'art.</span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          Étudiant en informatique et génie logiciel à l'UQAM (mineure en art et science),
+          je conçois des solutions complètes, du back-end à l'interface, avec le souci du détail.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="assets/cv/CV_Justin_Evrard.pdf" class="btn btn-primary" download>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Télécharger mon CV
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="GitHub">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.03 11.03 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.7 5.38-5.27 5.67.42.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <a href="#apropos" class="scroll-cue" aria-label="Défiler vers le bas">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+      </a>
+    </section>
+
+    <!-- ===== B. À propos ===== -->
+    <section id="apropos" class="section">
+      <div class="container">
+        <p class="section-eyebrow reveal">Qui suis-je</p>
+        <h2 class="section-title reveal">À propos</h2>
+        <div class="about-grid">
+          <p class="about-text reveal">
+            Je suis étudiant au <strong>Baccalauréat en informatique et génie logiciel à l'UQAM</strong>,
+            avec une <strong>mineure en art et science</strong>. Cette double formation m'a appris à voir
+            le développement logiciel comme une discipline à la fois rigoureuse et créative : je conçois
+            des <strong>solutions logicielles complètes</strong>, du back-end (API, bases de données, déploiement)
+            jusqu'à l'interface utilisateur, en gardant toujours un œil sur l'expérience et l'esthétique du produit final.
+          </p>
+          <ul class="about-facts reveal">
+            <li><span class="fact-label">Localisation</span><span>Montréal, Québec</span></li>
+            <li><span class="fact-label">Formation</span><span>B.Sc. Informatique et génie logiciel — UQAM</span></li>
+            <li><span class="fact-label">Mineure</span><span>Art et science</span></li>
+            <li><span class="fact-label">Champs d'intérêt</span><span>Back-end, IA appliquée, CI/CD</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== C. Compétences ===== -->
+    <section id="competences" class="section section-alt">
+      <div class="container">
+        <p class="section-eyebrow reveal">Ma boîte à outils</p>
+        <h2 class="section-title reveal">Compétences techniques</h2>
+
+        <div class="skills-block reveal">
+          <h3 class="skills-subtitle">Langages</h3>
+          <div class="tag-grid">
+            <span class="tag">Java</span>
+            <span class="tag">C / C++</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Assembleur RISC-V</span>
+          </div>
+        </div>
+
+        <div class="skills-block reveal">
+          <h3 class="skills-subtitle">Outils &amp; Infrastructure</h3>
+          <div class="tag-grid">
+            <span class="tag">GitHub</span>
+            <span class="tag">GitHub Actions (CI/CD)</span>
+            <span class="tag">PM2</span>
+            <span class="tag">Oracle Cloud (VM)</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== D. Projets ===== -->
+    <section id="projets" class="section">
+      <div class="container">
+        <p class="section-eyebrow reveal">Mon travail</p>
+        <h2 class="section-title reveal">Projets</h2>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-card-header">
+              <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span class="project-tags">
+                <span class="tag tag-sm">Node.js</span>
+                <span class="tag tag-sm">LLM API</span>
+                <span class="tag tag-sm">CI/CD</span>
+              </span>
+            </div>
+            <h3 class="project-title">Bot Discord IA</h3>
+            <p class="project-desc">
+              Bot conversationnel développé en Node.js/JavaScript, intégrant une API LLM (OpenRouter)
+              pour générer des réponses en temps réel. Déploiement entièrement automatisé via GitHub Actions
+              sur un serveur Oracle Cloud, avec gestion du processus par PM2.
+            </p>
+            <div class="project-links">
+              <a href="#" class="project-link" aria-disabled="true">Code source →</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card-header">
+              <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 19a4 4 0 0 1-.88-7.9A5 5 0 1 1 15.9 6H17a4 4 0 1 1 0 8h-1"></path><line x1="12" y1="13" x2="12" y2="21"></line><polyline points="9 18 12 21 15 18"></polyline></svg>
+              <span class="project-tags">
+                <span class="tag tag-sm">MVC</span>
+                <span class="tag tag-sm">SQL</span>
+              </span>
+            </div>
+            <h3 class="project-title">Site Web Météo</h3>
+            <p class="project-desc">
+              Application web développée en France, structurée selon une architecture MVC et connectée
+              à une base de données SQL pour la persistance et l'affichage de données météorologiques.
+            </p>
+            <div class="project-links">
+              <a href="#" class="project-link" aria-disabled="true">Code source →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== E. Expérience ===== -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <p class="section-eyebrow reveal">Mon parcours</p>
+        <h2 class="section-title reveal">Expérience</h2>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Stagiaire — Programmation scientifique</h3>
+              <p class="timeline-meta">MATLAB · Traitement et analyse de données</p>
+              <p class="timeline-desc">
+                Stage axé sur la programmation en <strong>MATLAB</strong> : développement de scripts pour
+                l'analyse, le traitement et la visualisation de données, avec application de méthodes
+                numériques à des problèmes concrets.
+              </p>
+            </div>
+          </li>
+          <li class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Baccalauréat en informatique et génie logiciel</h3>
+              <p class="timeline-meta">UQAM · Mineure en art et science</p>
+              <p class="timeline-desc">
+                Formation combinant les fondements du génie logiciel (structures de données, systèmes,
+                architecture logicielle) et une ouverture créative via la mineure en art et science.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== F. Contact ===== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="section-eyebrow reveal">Parlons-en</p>
+        <h2 class="section-title reveal">Contact</h2>
+
+        <div class="contact-grid">
+          <form id="contact-form" class="contact-form reveal" novalidate>
+            <div class="form-field">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-side reveal">
+            <p class="contact-text">
+              Vous avez un projet, une opportunité ou simplement envie d'échanger ? N'hésitez pas à me
+              contacter, je réponds rapidement.
+            </p>
+            <div class="social-links">
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.03 11.03 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.7 5.38-5.27 5.67.42.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"></path></svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:contact@justinevrard.dev" class="social-link">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"></path><path d="M22 6l-10 7L2 6"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Justin Evrard. Tous droits réservés.</p>
+      <p class="footer-note">Conçu &amp; développé avec HTML, CSS et JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
