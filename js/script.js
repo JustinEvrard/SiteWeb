@@ -66,7 +66,7 @@ revealElements.forEach((el) => revealObserver.observe(el));
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
-contactForm.addEventListener('submit', (event) => {
+contactForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const name = contactForm.name.value.trim();
@@ -84,10 +84,28 @@ contactForm.addEventListener('submit', (event) => {
     return;
   }
 
-  // No backend connected yet: replace this with a call to your
-  // service of choice (Formspree, EmailJS, your own API, etc.)
-  formStatus.textContent = `Merci ${name}, votre message a bien été préparé !`;
-  contactForm.reset();
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  formStatus.textContent = 'Envoi en cours…';
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (response.ok) {
+      formStatus.textContent = `Merci ${name}, votre message a bien été envoyé !`;
+      contactForm.reset();
+    } else {
+      formStatus.textContent = "Une erreur est survenue, réessayez ou écrivez-moi directement par email.";
+    }
+  } catch {
+    formStatus.textContent = "Une erreur est survenue, réessayez ou écrivez-moi directement par email.";
+  } finally {
+    submitButton.disabled = false;
+  }
 });
 
 // =========================================================

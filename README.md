@@ -26,7 +26,7 @@ SiteWeb/
 - [x] Remplacer les liens GitHub/LinkedIn placeholder par les vrais profils
 - [x] Remplacer l'adresse `mailto:` par la vraie adresse de contact
 - [x] Ajouter le lien réel vers le dépôt du Bot Discord IA (le Site Web Météo n'a pas de dépôt public)
-- [ ] Connecter le formulaire de contact à un service (Formspree, EmailJS, ou une API propre) — il est actuellement validé en front-end uniquement, sans envoi réel
+- [x] Connecter le formulaire de contact à Formspree (envoi vers justin.evrard24@gmail.com)
 
 ## Lancer en local
 
