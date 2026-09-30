@@ -39,3 +39,5 @@ npx serve .
 ## Déploiement
 
 En ligne via GitHub Pages : https://justinevrard.github.io/SiteWeb/
+
+`css/style.css` et `js/script.js` sont chargés avec un paramètre `?v=N` dans `index.html` pour éviter que les navigateurs affichent une version mise en cache après un déploiement. **Après toute modification de `style.css` ou `script.js`, incrémenter ce numéro** dans les deux balises `<link>`/`<script>` d'`index.html`.
