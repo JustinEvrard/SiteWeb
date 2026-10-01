@@ -21,6 +21,54 @@ themeToggle.addEventListener('click', () => {
 });
 
 // =========================================================
+// 1b. Language switch (FR / EN), auto-detected then persisted
+// =========================================================
+const LANG_KEY = 'portfolio-lang';
+const langButtons = document.querySelectorAll('.lang-btn');
+const metaDescription = document.getElementById('meta-description');
+
+function applyLanguage(lang) {
+  root.setAttribute('lang', lang);
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const value = getTranslation(lang, el.getAttribute('data-i18n'));
+    if (value !== undefined) el.textContent = value;
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    const value = getTranslation(lang, el.getAttribute('data-i18n-html'));
+    if (value !== undefined) el.innerHTML = value;
+  });
+
+  document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+    el.getAttribute('data-i18n-attr').split(';').forEach((pair) => {
+      const [attr, key] = pair.split(':');
+      const value = getTranslation(lang, key);
+      if (value !== undefined) el.setAttribute(attr, value);
+    });
+  });
+
+  langButtons.forEach((btn) => {
+    const isActive = btn.dataset.langBtn === lang;
+    btn.classList.toggle('is-active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
+  });
+
+  const description = getTranslation(lang, 'meta.description');
+  if (description) metaDescription.setAttribute('content', description);
+
+  localStorage.setItem(LANG_KEY, lang);
+}
+
+const savedLang = localStorage.getItem(LANG_KEY);
+const browserLang = (navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en';
+applyLanguage(savedLang || browserLang);
+
+langButtons.forEach((btn) => {
+  btn.addEventListener('click', () => applyLanguage(btn.dataset.langBtn));
+});
+
+// =========================================================
 // 2. Mobile menu toggle
 // =========================================================
 const menuToggle = document.getElementById('menu-toggle');
@@ -69,24 +117,25 @@ const formStatus = document.getElementById('form-status');
 contactForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
+  const lang = root.getAttribute('lang');
   const name = contactForm.name.value.trim();
   const email = contactForm.email.value.trim();
   const message = contactForm.message.value.trim();
 
   if (!name || !email || !message) {
-    formStatus.textContent = 'Merci de remplir tous les champs.';
+    formStatus.textContent = getTranslation(lang, 'form.fillAll');
     return;
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    formStatus.textContent = 'Merci d\'entrer une adresse email valide.';
+    formStatus.textContent = getTranslation(lang, 'form.invalidEmail');
     return;
   }
 
   const submitButton = contactForm.querySelector('button[type="submit"]');
   submitButton.disabled = true;
-  formStatus.textContent = 'Envoi en cours…';
+  formStatus.textContent = getTranslation(lang, 'form.sending');
 
   try {
     const response = await fetch(contactForm.action, {
@@ -96,13 +145,13 @@ contactForm.addEventListener('submit', async (event) => {
     });
 
     if (response.ok) {
-      formStatus.textContent = `Merci ${name}, votre message a bien été envoyé !`;
+      formStatus.textContent = getTranslation(lang, 'form.success').replace('{name}', name);
       contactForm.reset();
     } else {
-      formStatus.textContent = "Une erreur est survenue, réessayez ou écrivez-moi directement par email.";
+      formStatus.textContent = getTranslation(lang, 'form.error');
     }
   } catch {
-    formStatus.textContent = "Une erreur est survenue, réessayez ou écrivez-moi directement par email.";
+    formStatus.textContent = getTranslation(lang, 'form.error');
   } finally {
     submitButton.disabled = false;
   }
