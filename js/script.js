@@ -90,33 +90,51 @@ navLinks.querySelectorAll('a').forEach((link) => {
 });
 
 // =========================================================
-// 2b. Hero floating cards — mouse parallax
+// 2b. Hero floating cards — autonomous demo-cursor animation
 // =========================================================
-const heroVisual = document.querySelector('.hero-visual');
-const parallaxCards = [
-  { el: document.querySelector('.hero-badge'), depth: 8 },
-  { el: document.querySelector('.code-card'), depth: 14 },
-  { el: document.querySelector('.stack-card'), depth: 20 },
-  { el: document.querySelector('.terminal-card'), depth: 26 },
-  { el: document.querySelector('.quote-card'), depth: 18 },
-].filter((card) => card.el);
+const heroVisualInner = document.querySelector('.hero-visual-inner');
+const demoCursor = document.querySelector('.demo-cursor');
+const demoCursorPing = document.querySelector('.demo-cursor-ping');
 
-if (heroVisual && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  heroVisual.addEventListener('mousemove', (event) => {
-    const rect = heroVisual.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
+if (
+  heroVisualInner &&
+  demoCursor &&
+  window.innerWidth >= 900 &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
+  const cursorTargets = ['.hero-badge', '.code-card', '.stack-card', '.terminal-card', '.quote-card']
+    .map((selector) => heroVisualInner.querySelector(selector))
+    .filter(Boolean);
 
-    parallaxCards.forEach(({ el, depth }) => {
-      el.style.transform = `translate(${(x * depth).toFixed(1)}px, ${(y * depth).toFixed(1)}px)`;
-    });
-  });
+  let targetIndex = 0;
 
-  heroVisual.addEventListener('mouseleave', () => {
-    parallaxCards.forEach(({ el }) => {
-      el.style.transform = '';
-    });
-  });
+  function moveCursorTo(el) {
+    const containerRect = heroVisualInner.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+    const x = rect.left - containerRect.left + rect.width * 0.38;
+    const y = rect.top - containerRect.top + rect.height * 0.42;
+    demoCursor.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  function cycleCursor() {
+    const current = cursorTargets[targetIndex];
+    moveCursorTo(current);
+
+    setTimeout(() => {
+      current.classList.add('is-cursor-target');
+      demoCursorPing.classList.remove('is-pinging');
+      void demoCursorPing.offsetWidth; // restart the ping animation
+      demoCursorPing.classList.add('is-pinging');
+
+      setTimeout(() => {
+        current.classList.remove('is-cursor-target');
+        targetIndex = (targetIndex + 1) % cursorTargets.length;
+        cycleCursor();
+      }, 1100);
+    }, 950);
+  }
+
+  setTimeout(cycleCursor, 1600);
 }
 
 // =========================================================

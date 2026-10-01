@@ -425,14 +425,58 @@ button {
   margin-left: auto;
 }
 
-/* Floating cards get their transform nudged by JS on mousemove (parallax) */
+/* Floating cards get a highlight pulse when the demo cursor "visits" them */
 .hero-badge,
 .code-card,
 .stack-card,
 .terminal-card,
 .quote-card {
-  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
-  will-change: transform;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-badge.is-cursor-target,
+.code-card.is-cursor-target,
+.stack-card.is-cursor-target,
+.terminal-card.is-cursor-target,
+.quote-card.is-cursor-target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 35%, transparent), var(--shadow);
+}
+
+/* Decorative, non-interactive cursor that drifts between the hero cards */
+.demo-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  pointer-events: none;
+  transition: transform 0.95s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.demo-cursor svg {
+  display: block;
+  color: var(--text);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+}
+
+.demo-cursor-ping {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+}
+
+.demo-cursor-ping.is-pinging {
+  animation: cursorPing 0.6s ease-out;
+}
+
+@keyframes cursorPing {
+  0% { opacity: 0.85; transform: scale(0.4); }
+  100% { opacity: 0; transform: scale(2.4); }
 }
 
 .hero-badge {
