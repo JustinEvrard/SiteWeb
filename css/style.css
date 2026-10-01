@@ -280,8 +280,8 @@ button {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  gap: 110px;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 150px;
   align-items: center;
 }
 
@@ -383,12 +383,12 @@ button {
 /* ---- Decorative visual column ---- */
 .hero-visual {
   position: relative;
-  min-height: 640px;
+  min-height: 700px;
 }
 
 .hero-visual-inner {
   position: relative;
-  width: min(460px, 100%);
+  width: min(440px, 100%);
   height: 100%;
   margin-left: auto;
 }
@@ -396,7 +396,7 @@ button {
 .hero-badge {
   position: absolute;
   top: 0;
-  left: 40px;
+  left: 30px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -419,9 +419,9 @@ button {
 
 .code-card {
   position: absolute;
-  top: 64px;
+  top: 60px;
   left: 0;
-  width: min(270px, 78%);
+  width: min(230px, 72%);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -471,9 +471,9 @@ button {
 
 .terminal-card {
   position: absolute;
-  top: 400px;
-  left: 110px;
-  width: min(260px, 72%);
+  top: 380px;
+  left: 70px;
+  width: min(240px, 72%);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -515,9 +515,9 @@ button {
 
 .stack-card {
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 0;
-  width: min(180px, 55%);
+  width: min(180px, 60%);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -559,12 +559,12 @@ button {
 
 .quote-card {
   position: absolute;
-  top: 580px;
-  right: 10px;
+  top: 570px;
+  right: 0;
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  width: min(220px, 70%);
+  width: min(210px, 70%);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
