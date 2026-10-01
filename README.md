@@ -18,9 +18,12 @@ SiteWeb/
 ├── js/
 │   ├── translations.js      # Dictionnaire de traduction FR/EN
 │   └── script.js             # Thème, langue, menu mobile, scroll-reveal, formulaire
+├── scripts/
+│   ├── generate_og_image.py  # Regenere assets/img/og-image.png (apercu de lien)
+│   └── generate_favicon.py    # Regenere assets/img/favicon.* (necessite Pillow)
 └── assets/
     ├── cv/                  # Placer ici CV_Justin_Evrard.pdf
-    └── img/                  # Photos / images du site
+    └── img/                  # Favicon, og-image.png, photos du site
 ```
 
 ### Traductions
