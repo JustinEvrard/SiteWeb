@@ -1,53 +1,66 @@
-# SiteWeb — Portfolio de Justin Evrard
+# Justin Evrard — Portfolio
 
-Portfolio personnel présentant mon CV, mes compétences techniques et mes projets.
+Site web personnel présentant mon parcours, mes compétences techniques et mes projets.
 
-## Stack
+**🔗 En ligne :** [justinevrard.github.io/SiteWeb](https://justinevrard.github.io/SiteWeb/)
 
-- HTML5 / CSS3 / JavaScript vanilla (aucun framework, aucun build requis)
-- Mode sombre / clair persistant (localStorage)
-- Bilingue FR/EN avec détection automatique de la langue du navigateur (localStorage)
-- Design responsive (mobile-first)
+## Fonctionnalités
 
-## Structure
+- Design moderne et responsive (mobile-first)
+- Mode sombre / clair persistant
+- Bilingue FR/EN avec détection automatique de la langue du navigateur
+- Animations au défilement et composition visuelle animée dans le hero
+- Formulaire de contact fonctionnel (Formspree)
+- Image de partage (Open Graph) et favicon personnalisés
+
+## Stack technique
+
+HTML5 / CSS3 / JavaScript vanilla — aucun framework, aucun build requis.
+
+## Structure du projet
 
 ```
 SiteWeb/
-├── index.html             # Structure et contenu du site (attributs data-i18n)
-├── css/style.css           # Design, thèmes, responsive, animations
+├── index.html                  # Structure et contenu du site (attributs data-i18n)
+├── css/
+│   └── style.css                # Design, thèmes, responsive, animations
 ├── js/
-│   ├── translations.js      # Dictionnaire de traduction FR/EN
-│   └── script.js             # Thème, langue, menu mobile, scroll-reveal, formulaire
+│   ├── translations.js           # Dictionnaire de traduction FR/EN
+│   └── script.js                  # Thème, langue, menu mobile, scroll-reveal, formulaire
 ├── scripts/
-│   ├── generate_og_image.py  # Regenere assets/img/og-image.png (apercu de lien)
-│   └── generate_favicon.py    # Regenere assets/img/favicon.* (necessite Pillow)
+│   ├── generate_og_image.py       # Régénère assets/img/og-image.png (aperçu de lien)
+│   └── generate_favicon.py         # Régénère assets/img/favicon.* (nécessite Pillow)
 └── assets/
-    ├── cv/                  # Placer ici CV_Justin_Evrard.pdf
-    └── img/                  # Favicon, og-image.png, photos du site
+    ├── cv/                       # CV_Justin_Evrard.pdf
+    └── img/                       # Favicon, og-image.png, photos du site
 ```
 
-### Traductions
+## Traductions (i18n)
 
-Tout le texte traduisible porte un attribut `data-i18n="section.cle"` (texte simple), `data-i18n-html="section.cle"` (texte avec balises `<strong>`/`<span>` imbriquées) ou `data-i18n-attr="attribut:section.cle"` (attributs comme `aria-label`). Les valeurs FR/EN sont dans `js/translations.js`. **Toute nouvelle section de contenu doit ajouter ses clés aux deux langues dans ce fichier.**
+Tout le texte traduisible porte un attribut :
 
-## À faire avant mise en ligne
+| Attribut | Usage |
+|---|---|
+| `data-i18n="section.cle"` | Texte simple |
+| `data-i18n-html="section.cle"` | Texte avec balises imbriquées (`<strong>`, `<span>`...) |
+| `data-i18n-attr="attribut:section.cle"` | Attributs HTML (`aria-label`, `title`...) |
 
-- [x] Ajouter `assets/cv/CV_Justin_Evrard.pdf`
-- [x] Remplacer les liens GitHub/LinkedIn placeholder par les vrais profils
-- [x] Remplacer l'adresse `mailto:` par la vraie adresse de contact
-- [x] Ajouter le lien réel vers le dépôt du Bot Discord IA (le Site Web Météo n'a pas de dépôt public)
-- [x] Connecter le formulaire de contact à Formspree (envoi vers justin.evrard24@gmail.com)
+Les valeurs FR/EN sont centralisées dans `js/translations.js`. **Toute nouvelle section de contenu doit ajouter ses clés aux deux langues dans ce fichier.**
 
-## Lancer en local
-
-Ouvrir simplement `index.html` dans un navigateur, ou servir le dossier avec un petit serveur statique :
+## Développement local
 
 ```bash
 npx serve .
 ```
 
+Ou ouvrir directement `index.html` dans un navigateur.
+
 ## Déploiement
 
-En ligne via GitHub Pages : https://justinevrard.github.io/SiteWeb/
+En ligne via GitHub Pages (branche `main`, dossier racine).
 
-`css/style.css`, `js/script.js` et `js/translations.js` sont chargés avec un paramètre `?v=N` dans `index.html` pour éviter que les navigateurs affichent une version mise en cache après un déploiement. **Après toute modification de l'un de ces fichiers, incrémenter son numéro** dans la balise `<link>`/`<script>` correspondante d'`index.html`.
+> **Cache-busting :** `css/style.css`, `js/script.js` et `js/translations.js` sont chargés avec un paramètre `?v=N` dans `index.html` pour éviter que les navigateurs affichent une version mise en cache après un déploiement. Après toute modification de l'un de ces fichiers, incrémenter son numéro dans la balise `<link>`/`<script>` correspondante.
+
+## Contact
+
+[justin.evrard24@gmail.com](mailto:justin.evrard24@gmail.com) · [LinkedIn](https://www.linkedin.com/in/justin-evrard-10ba72212/) · [GitHub](https://github.com/JustinEvrard)
