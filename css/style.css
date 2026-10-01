@@ -425,6 +425,16 @@ button {
   margin-left: auto;
 }
 
+/* Floating cards get their transform nudged by JS on mousemove (parallax) */
+.hero-badge,
+.code-card,
+.stack-card,
+.terminal-card,
+.quote-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: transform;
+}
+
 .hero-badge {
   position: absolute;
   top: 0;

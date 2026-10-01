@@ -90,6 +90,36 @@ navLinks.querySelectorAll('a').forEach((link) => {
 });
 
 // =========================================================
+// 2b. Hero floating cards — mouse parallax
+// =========================================================
+const heroVisual = document.querySelector('.hero-visual');
+const parallaxCards = [
+  { el: document.querySelector('.hero-badge'), depth: 8 },
+  { el: document.querySelector('.code-card'), depth: 14 },
+  { el: document.querySelector('.stack-card'), depth: 20 },
+  { el: document.querySelector('.terminal-card'), depth: 26 },
+  { el: document.querySelector('.quote-card'), depth: 18 },
+].filter((card) => card.el);
+
+if (heroVisual && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVisual.addEventListener('mousemove', (event) => {
+    const rect = heroVisual.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    parallaxCards.forEach(({ el, depth }) => {
+      el.style.transform = `translate(${(x * depth).toFixed(1)}px, ${(y * depth).toFixed(1)}px)`;
+    });
+  });
+
+  heroVisual.addEventListener('mouseleave', () => {
+    parallaxCards.forEach(({ el }) => {
+      el.style.transform = '';
+    });
+  });
+}
+
+// =========================================================
 // 3. Scroll-reveal animations
 // =========================================================
 const revealElements = document.querySelectorAll('.reveal');
